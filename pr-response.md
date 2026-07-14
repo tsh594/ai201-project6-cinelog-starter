@@ -128,15 +128,12 @@ Expected: 200 OK with the updated entry.
 Below is the final commit history after rebasing and rewriting with `git rebase -i`. All commits follow Conventional Commits, are single-logical-change, and there are no merge commits.
 
 $ git log --oneline origin/main..HEAD
-abcdef1 (HEAD -> feature/watchlist) feat: add remove_from_watchlist and test
-1234567 feat: add visibility toggle endpoint and test
-890abcd test: add additional test for public flag default
-2345678 test: add test for nonexistent film_id in add_to_watchlist
-3456789 fix: update watchlist film_id to UUID after main refactor
-4567890 fix: add deduplication check to add_to_watchlist
-5678901 fix: rename save_to_watchlist to add_to_watchlist
-6789012 feat: add watchlist model and endpoints
-
+66812b1 (HEAD -> feature/watchlist, origin/feature/watchlist) docs: add PR response doc and update README
+ffa29db fix: update watchlist film_id to UUID after main refactor
+72fc6fc fix: rename save_to_watchlist to add_to_watchlist
+3766983 test: add watchlist test suite
+d66864f feat: add watchlist service and routes
+436efd3 feat: add watchlist model and database`
 
 *(A screenshot of this output is included as `commit_history.png` in the repo.)*
 
