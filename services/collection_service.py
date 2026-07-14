@@ -5,7 +5,7 @@ Business logic for managing a user's film collection (films they've already watc
 All functions follow the project's verb_to_noun naming convention.
 """
 
-from app import db
+from database import db   # <-- changed from app import db
 from models import Film, CollectionEntry
 
 
