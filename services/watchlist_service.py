@@ -1,3 +1,5 @@
+# Function renamed from save_to_watchlist to add_to_watchlist (per code review)
+
 """
 services/watchlist_service.py — CineLog
 
