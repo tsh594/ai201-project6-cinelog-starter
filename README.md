@@ -90,3 +90,14 @@ git checkout feature/watchlist
 ```
 
 The open PR and the maintainer's review comments are filed on GitHub. Work through each comment and document your responses in your **PR Response Doc**.
+
+### Watchlist
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/watchlist/<user_id>` | Get a user's watchlist (newest first) |
+| POST | `/watchlist/<user_id>/add` | Add a film to the watchlist (public default True) |
+| DELETE | `/watchlist/<user_id>/remove` | Remove a film from the watchlist |
+| PATCH | `/watchlist/<user_id>/<film_id>/visibility` | Toggle visibility (public/private) |
+
+All endpoints follow the same patterns as the Collection endpoints.
