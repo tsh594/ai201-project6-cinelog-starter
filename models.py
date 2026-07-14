@@ -74,6 +74,7 @@ class CollectionEntry(db.Model):
             "rating": self.rating,
         }
 
+# film_id uses UUID string (migrated from integer after main refactor)
 
 class WatchlistEntry(db.Model):
     """Represents a film a user wants to watch (plan to watch)."""
