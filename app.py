@@ -1,11 +1,8 @@
 """app.py — CineLog Flask application factory"""
 
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 import os
-
-db = SQLAlchemy()
-
+from database import db   # <-- import from database.py
 
 def create_app(config=None):
     app = Flask(__name__)
@@ -18,19 +15,20 @@ def create_app(config=None):
     if config:
         app.config.update(config)
 
-    db.init_app(app)
+    db.init_app(app)   # now db is imported from database.py
 
     from routes.films import films_bp
     from routes.collection import collection_bp
+    from routes.watchlist import watchlist_bp
 
     app.register_blueprint(films_bp, url_prefix="/films")
     app.register_blueprint(collection_bp, url_prefix="/collection")
+    app.register_blueprint(watchlist_bp, url_prefix="/watchlist")
 
     with app.app_context():
         db.create_all()
 
     return app
-
 
 if __name__ == "__main__":
     app = create_app()
